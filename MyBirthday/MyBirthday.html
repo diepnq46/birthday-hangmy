@@ -72,12 +72,18 @@
                 </div>
                 
                 <!-- 5. Phần nhạc -->
-                <audio id="player" autoplay loop>
+                <audio id="player" autoplay loop muted>
                     <source src="./music.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
                 </audio>
             </div>
         </div>
         <script>
+             // Bỏ tắt tiếng sau khi trang tải xong
+            document.addEventListener('DOMContentLoaded', () => {
+                const player = document.getElementById('player');
+                player.muted = false; // Bật âm thanh
+            });
             if (document.location.search.match(/type=embed/gi)) {
                 window.parent.postMessage("resize", "*");
             }
