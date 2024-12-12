@@ -70,20 +70,12 @@
                     <!-- 4. Tên của người đó -->
                     <h1 onclick="showMessage()" class="avatar__title">Minh Hằng</h1>
                 </div>
-                
-                <!-- 5. Phần nhạc -->
-                <video id="player" autoplay loop muted>
-                    <source src="./music.mp3" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </video>
             </div>
         </div>
         <script>
              // Bỏ tắt tiếng sau khi trang tải xong
-            document.addEventListener('DOMContentLoaded', () => {
-                const player = document.getElementById('player');
-                player.muted = false; // Bật âm thanh
-            });
+            var audio = new Audio('https://diepnq46.github.io/birthday-hangmy/MyBirthday/music.mp3?raw=true');
+            audio.play();
             if (document.location.search.match(/type=embed/gi)) {
                 window.parent.postMessage("resize", "*");
             }
